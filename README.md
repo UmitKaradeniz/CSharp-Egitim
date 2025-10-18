@@ -1,107 +1,59 @@
-# C# Eğitim Projesi ??
+# C# EÄŸitim Projesi 
 
-Bu proje, C# ve Entity Framework öğrenirken yaptığım çalışmaları içermektedir.
+Bu proje, C# ve Entity Framework Ã¶ÄŸrenirken yaptÄ±ÄŸÄ±m Ã§alÄ±ÅŸmalarÄ± iÃ§ermektedir.
 
-## ?? Proje Hakkında
+##  Proje HakkÄ±nda
 
-Bu projede bir seyahat yönetim sistemi geliştirilmiştir. Lokasyon, rehber, müşteri ve admin yönetimi yapılabilmektedir.
+Bu projede bir seyahat yÃ¶netim sistemi geliÅŸtirilmiÅŸtir. Lokasyon, rehber, mÃ¼ÅŸteri ve admin yÃ¶netimi yapÄ±labilmektedir.
 
-## ??? Kullanılan Teknolojiler
+##  KullanÄ±lan Teknolojiler
 
 - **C# .NET Framework 4.7.2**
 - **Entity Framework 6** (Database First)
 - **Windows Forms** (WinForms)
 - **SQL Server**
 
-## ?? Proje Yapısı
+##  Proje YapÄ±sÄ±
 
-Proje N-Katmanlı mimari (N-Tier Architecture) yaklaşımı ile geliştirilmiştir:
+Proje N-KatmanlÄ± mimari (N-Tier Architecture) yaklaÅŸÄ±mÄ± ile geliÅŸtirilmiÅŸtir:
 
-- **C#Egitim.EntityLayer**: Veritabanı entity sınıfları
-- **C#Egitim.DataAccessLayer**: Veritabanı erişim katmanı
-- **C#Egitim.BusinessLayer**: İş mantığı katmanı
-- **C#Egitim.PresentationLayer**: Sunum katmanı
-- **C#Egitim.EFProject**: Entity Framework ile örnek projeler
+- **C#Egitim.EntityLayer**: VeritabanÄ± entity sÄ±nÄ±flarÄ±
+- **C#Egitim.DataAccessLayer**: VeritabanÄ± eriÅŸim katmanÄ±
+- **C#Egitim.BusinessLayer**: Ä°ÅŸ mantÄ±ÄŸÄ± katmanÄ±
+- **C#Egitim.PresentationLayer**: Sunum katmanÄ±
+- **C#Egitim.EFProject**: Entity Framework ile Ã¶rnek projeler
 
-## ??? Veritabanı
+##  VeritabanÄ±
 
-Proje `C#EgitimTravelDb` adında bir SQL Server veritabanı kullanır.
+Proje `C#EgitimTravelDb` adÄ±nda bir SQL Server veritabanÄ± kullanÄ±r.
 
 ### Tablolar:
 - **Guide**: Rehber bilgileri
-- **Location**: Lokasyon bilgileri (şehir, ülke, kapasite, fiyat vb.)
-- **Customer**: Müşteri bilgileri
-- **Admin**: Yönetici bilgileri
+- **Location**: Lokasyon bilgileri (ÅŸehir, Ã¼lke, kapasite, fiyat vb.)
+- **Customer**: MÃ¼ÅŸteri bilgileri
+- **Admin**: YÃ¶netici bilgileri
 
-## ?? Kurulum
+##  Kurulum
 
-1. Projeyi klonlayın:
-```bash
-git clone https://github.com/KULLANICI_ADINIZ/C#Egitim.git
-```
+1. Projeyi klonlayÄ±n
 
-2. SQL Server'da veritabanını oluşturun:
-```sql
-CREATE DATABASE [C#EgitimTravelDb]
-```
+2. SQL Server'da veritabanÄ±nÄ± oluÅŸturun
 
-3. Tabloları oluşturmak için aşağıdaki komutları çalıştırın:
-```sql
-CREATE TABLE Guide (
-    GuideId INT PRIMARY KEY IDENTITY(1,1),
-    GuideName NVARCHAR(50),
-    GuideSurname NVARCHAR(50)
-)
+3. TablolarÄ± oluÅŸturmak iÃ§in aÅŸaÄŸÄ±daki komutlarÄ± Ã§alÄ±ÅŸtÄ±rÄ±n
 
-CREATE TABLE Location (
-    LocationId INT PRIMARY KEY IDENTITY(1,1),
-    City NVARCHAR(50),
-    Country NVARCHAR(50),
-    Capacity TINYINT,
-    Price DECIMAL(18,0),
-    DayNight NVARCHAR(50),
-    GuideId INT,
-    FOREIGN KEY (GuideId) REFERENCES Guide(GuideId)
-)
+4. `App.config` dosyasÄ±ndaki connection string'i kendi SQL Server bilgilerinize gÃ¶re dÃ¼zenleyin
 
-CREATE TABLE Customer (
-    CustomerId INT PRIMARY KEY IDENTITY(1,1),
-    CustomerName NVARCHAR(50),
-    CustomerSurname NVARCHAR(50),
-    CustomerBalance DECIMAL(18,2)
-)
+5. Visual Studio'da solution'Ä± aÃ§Ä±n ve projeyi Ã§alÄ±ÅŸtÄ±rÄ±n.
 
-CREATE TABLE Admin (
-    AdminId INT PRIMARY KEY IDENTITY(1,1),
-    Username NVARCHAR(50),
-    Password NVARCHAR(50)
-)
-```
+##  KullanÄ±m
 
-4. `App.config` dosyasındaki connection string'i kendi SQL Server bilgilerinize göre düzenleyin:
-```xml
-<add name="Entities2" 
-     connectionString="data source=SUNUCU_ADINIZ;initial catalog=C#EgitimTravelDb;integrated security=True;..."
-     providerName="System.Data.EntityClient" />
-```
-
-5. Visual Studio'da solution'ı açın ve projeyi çalıştırın.
-
-## ?? Kullanım
-
-Proje başlatıldığında lokasyon yönetim formu açılır. Bu formda:
-- Lokasyon listesi görüntülenebilir
+Proje baÅŸlatÄ±ldÄ±ÄŸÄ±nda lokasyon yÃ¶netim formu aÃ§Ä±lÄ±r. Bu formda:
+- Lokasyon listesi gÃ¶rÃ¼ntÃ¼lenebilir
 - Yeni lokasyon eklenebilir
-- Mevcut lokasyonlar güncellenebilir
+- Mevcut lokasyonlar gÃ¼ncellenebilir
 - Lokasyonlar silinebilir
 
-## ?? Notlar
 
-Bu proje eğitim amaçlı geliştirilmiştir ve sürekli güncellenebilir.
+##  GeliÅŸtirici
 
-## ?? Geliştirici
-
-Bu proje, C# öğrenim sürecim boyunca oluşturulmuştur.
-
----
-? Bu proje faydalı olduysa yıldız vermeyi unutmayın!
+Bu proje, C# Ã¶ÄŸrenim sÃ¼recim boyunca oluÅŸturulmuÅŸtur.
