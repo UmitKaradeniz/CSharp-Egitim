@@ -1,0 +1,52 @@
+## Visual Studio dosyalarý
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build sonuçlarý
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+## NuGet Packages
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+## Visual Studio cache dosyalarý
+*.cache
+*.ilk
+*.log
+*.pdb
+*.suo
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Entity Framework
+*.edmx.diagram
+*.edmx.sql
+
+## Diðer
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
